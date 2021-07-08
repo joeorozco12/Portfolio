@@ -1,35 +1,23 @@
-# To add a new cell, type '# %%'
-# To add a new markdown cell, type '# %% [markdown]'
-# %% [markdown]
 # # Plot Static Figures
 # ---
 # ## Import Relevent Packages
-
-# %%
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-# from scipy.interpolate import make_interp_spline, BSpline
 from scipy.signal import savgol_filter
 
-# %% [markdown]
 # ## Declaration of Variables
 # ---
 # Enter the relative path to data:
-
-# %%
 data_path = 'data/1/'
 s_parameter = ['VSWR', 'S21(db)']
 delimiter = ','
 output_plot_figures = ['6N100W-30 J-Spring Prototype VSWR ','6N100W-30 J-Spring Prototype Insertion Loss ']
 y_smooth = np.array([])
 
-# %% [markdown]
 # ## Function Definitions
 # ---
-
-# %%
 def get_file_paths(data_folder):
     list_csv_files = []
     file_index = []
@@ -47,8 +35,6 @@ def get_file_paths(data_folder):
             paths.append(p)
     return file_index, list_csv_files, paths
 
-
-# %%
 def funct(paths,i):
     figure, ax = plt.subplots(figsize=(11,8))
     
@@ -56,8 +42,6 @@ def funct(paths,i):
         df = read_files(value)
         plot_data(df,index)
     ax = format_axes(ax,i)
-
-     
 
     if i == 0:
         x1 = [0,1.5]
@@ -87,8 +71,6 @@ def funct(paths,i):
         plt.plot(x2,y2,'r')
         plt.plot(x11,y11,'r')
 
-
-# %%
 def read_files(list_csv_files):
     cols = ['Point', 'Frequency', 'VSWR','f2', 'S21(db)']
     df = pd.read_csv(list_csv_files,
@@ -101,8 +83,6 @@ def read_files(list_csv_files):
         df['VSWR'] = (10**(-df['VSWR']/20) + 1) / (10**(-df['VSWR']/20) - 1)
     return df
 
-
-# %%
 def plot_data(df,dut_num):
     str1 = ['Pre-Power','Post-Power','Post-Thermal Shock','Typical Performance']
     x = df['Frequency']
@@ -126,10 +106,7 @@ def plot_data(df,dut_num):
             label=label_name,
             )
 
-    
 
-
-# %%
 def format_axes(ax,figure_index):
     xlabel = 'Frequency'
     ylabel = s_parameter[figure_index]
@@ -143,16 +120,10 @@ def format_axes(ax,figure_index):
     ax.spines['right'].set_visible(False)
     ax.legend()
     
-
-# %% [markdown]
 # ## Main Program
 # ---
-
-# %%
 file_index,files,paths = get_file_paths(data_path)
 
-
-# %%
 for index, value in enumerate(output_plot_figures):
     funct(paths,index)
     fig_location = 'graphs/' + value
