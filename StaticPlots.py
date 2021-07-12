@@ -13,7 +13,7 @@ from scipy.signal import savgol_filter
 data_path = 'data/1/'
 s_parameter = ['VSWR', 'S21(db)']
 delimiter = ','
-output_plot_figures = ['6N100W-30 J-Spring Prototype VSWR ','6N100W-30 J-Spring Prototype Insertion Loss ']
+output_plot_figures = ['VSWR Example Plot ','Insertion Loss Example Plot ']
 y_smooth = np.array([])
 
 # ## Function Definitions
