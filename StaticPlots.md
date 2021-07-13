@@ -15,6 +15,7 @@ Enter the relative path to data:
 
 ```python
 data_path = 'data/'
+fig_location = 'plots/'
 s_parameter = ['VSWR', 'S21(db)']
 delimiter = ','
 output_plot_figures = ['VSWR ','Insertion Loss ']
@@ -22,7 +23,7 @@ y_smooth = np.array([])
 ```
 
 ## Function Definitions
-
+Retrieve File Paths:
 ```python
 def get_file_paths(data_folder):
     list_csv_files = []
@@ -40,7 +41,7 @@ def get_file_paths(data_folder):
             paths.append(p)
     return file_index, list_csv_files, paths 
 ```
-
+Plot Specification Limits:
 ```python
 def funct(paths,i):
     figure, ax = plt.subplots(figsize=(11,8))
@@ -48,7 +49,6 @@ def funct(paths,i):
     df = read_files(value)
     plot_data(df,index)
     ax = format_axes(ax,i)
-
 if i == 0:
     x1 = [0,1.5]
     x11 = [1.5,1.5]
@@ -77,7 +77,7 @@ else:
     plt.plot(x2,y2,'r')
     plt.plot(x11,y11,'r')
 ```
-
+Read CSV Files into Pandas Data Frame:
 ```python
 def read_files(list_csv_files):
     cols = ['Point', 'Frequency', 'VSWR','f2', 'S21(db)']
@@ -91,7 +91,7 @@ def read_files(list_csv_files):
         df['VSWR'] = (10**(-df['VSWR']/20) + 1) / (10**(-df['VSWR']/20) - 1)
     return df
 ```
-
+Plot Data:
 ```python
 def plot_data(df,dut_num):
     str1 = ['Pre-Power','Post-Power','Post-Thermal Shock', 'Orginal Springs', 'Post-Power 2019']
@@ -114,7 +114,7 @@ else:
         label=label_name,
         )
 ``` 
-
+Format Plots:
 ```python
 def format_axes(ax,figure_index):
 	  xlabel = 'Frequency'
