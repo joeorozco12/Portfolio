@@ -144,11 +144,10 @@ for index, value in enumerate(output_plot_figures):
     fig_location = 'graphs/' + value
     plt.savefig(fig_location)
 ```
- 
-
 
 ![img](1.png) ![img](2.png)
 
+# Plotting Dynamic Figures
 Interactive Plots using the [Bokeh Library](https://github.com/joeorozco12/Portfolio/blob/fdbbf9eb667efce51d2af57c2d712114d85b89b7/Examples/Dynamic%20Plot%20Examples/InteractivePlot.md).
 
 [HTML Version](https://github.com/joeorozco12/Portfolio/blob/fdbbf9eb667efce51d2af57c2d712114d85b89b7/Examples/Dynamic%20Plot%20Examples/DynamicGraph.html)
