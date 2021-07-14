@@ -46,7 +46,7 @@ def get_file_paths(data_folder):
             paths.append(p)
     return file_index, list_csv_files, paths 
 ```
-Plot Specification Limits:
+Read All CSV Files in A Directory:
 ```python
 def funct(paths,i):
     figure, ax = plt.subplots(figsize=(11,8))
