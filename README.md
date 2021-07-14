@@ -1,10 +1,9 @@
+# Plotting Static Figures
+
 ![img](https://www.python.org/static/community_logos/python-powered-w-100x40.png) 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1200px-Pandas_logo.svg.png" width="100" height="40">
-<img src="https://en.wikipedia.org/wiki/File:NumPy_logo_2020.svg" width="100" height="40">
-
-
-
-# Plotting Static Figures
+<img src="https://github.com/numpy/numpy/blob/main/branding/logo/primary/numpylogo.png?raw=true" width="100" height="40">
+<img src="https://matplotlib.org/3.2.2/_static/logo2_compressed.svg" width="100" height="40">
 
 ## Import Relevant Packages
 
