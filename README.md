@@ -1,7 +1,6 @@
 # Portfolio
-Testing portfolio methods.
+Examples of my work.
 
 ## Data Visualization
-This is [an example](/StaticPlots.md) of .
-![Alt text](Examples/Static Plot Examples/plots/1.png)
+
 
